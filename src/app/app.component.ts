@@ -10,9 +10,9 @@ import { ConfigService } from './config.service';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent implements OnInit {
-  users$: User[];
+  users: User[];
   constructor(private configService: ConfigService) { }
   ngOnInit() {
-    return this.configService.getUser().subscribe(data => this.users$ = data);
+    return this.configService.getUser().subscribe(data => this.users = data);
   }
 }

@@ -1,6 +1,24 @@
-<div *ngFor="user for users$">
-  <h2>{{user.status}}</h2>
-</div>
-
-
 <router-outlet></router-outlet>
+<div class="container">
+  <div class="row">
+    <div class="col-4" *ngFor="let user of users.articles">
+      <img src="{{user.urlToImage}}" alt="" class="img-fluid">
+      <div class="">
+        <div class="bottom pt-30 d-flex justify-content-between align-items-center flex-wrap">
+          <div>
+            <a href="#" class="primary-btn">{{user.source.name}}</a>
+            <a href="#"><span>{{user.publishedAt}}</span></a>
+          </div>
+          <div class="meta">
+            <span class="lnr lnr-bubble">Author: </span> {{user.author}}
+          </div>
+        </div>
+        <a href="#">
+          <h4>{{user.title}}</h4>
+        </a>
+        <p>{{user.description}}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
